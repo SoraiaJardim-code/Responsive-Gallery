@@ -1,0 +1,121 @@
+ <!DOCTYPE html>
+ <html lang="pt">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>My Gallery</title>
+
+ <!--Tailwind -->
+ <script src="https://cdn.tailwindcss.com"> </script>
+ </head>
+
+ <body class="bg-gray-100 min-h-screen p-6">
+
+    <header class="text-center mb-8">
+ <h1 class="text-4xl font-bold text-gray-800 tracking-wide uppercase">Portfolio</h1>
+ <p class="text-gray-600 mt-2">Photographic/Cinematographic Gallery</p>
+ </header>
+
+ <!--Breakpoints-->
+ <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+ <div class="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer hover:scale-[1.02] transition-transform duration-300">
+    <img src="https://picsum.photos" alt="Foto 1" class="w-full h-64 object-cover">
+    <div class="p-4 text-center font-medium text-gray-700">Cinematography</div>
+ </div>
+
+ <div class="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer hover:scale-[1.02] transition-transform duration-300">
+    <img src="https://picsum.photos" alt="Foto 2" class="w-full h-64 object-cover">
+    <div class="p-4 text-center font-medium text-gray-700">Landscape Capture</div>
+ </div>
+
+ <div class="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer hover:scale-[1.02] transition-transform duration-300">
+    <img src="https://picsum.photos" alt="Foto 3" class="w-full h-64 object-cover">
+    <div class="p-4 text-center font-medium text-gray-700">Shadow & Light</div>
+ </div>
+
+ <div class="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer hover:scale-[1.02] transition-transform duration-300">
+    <img src="https://picsum.photos" alt="Foto 4" class="w-full h-64 object-cover">
+    <div class="p-4 text-center font-medium text-gray-700">Urban Geometry</div>
+ </div>
+
+ <div class="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer hover:scale-[1.02] transition-transform duration-300">
+    <img src="https://picsum.photos" alt="Foto 5" class="w-full h-64 object-cover">
+    <div class="p-4 text-center font-medium text-gray-700">Portait Study</div>
+ </div>
+
+ <div class="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer hover:scale-[1.02] transition-transform duration-300">
+    <img src="https://picsum.photos" alt="Foto 6" class="w-full h-64 object-cover">
+    <div class="p-4 text-center font-medium text-gray-700">Neon Nights</div>
+ </div>
+
+ <div class="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer hover:scale-[1.02] transition-transform duration-300">
+    <img src="https://picsum.photos" alt="Foto 7" class="w-full h-64 object-cover">
+    <div class="p-4 text-center font-medium text-gray-700">Nature Focus</div>
+ </div>
+
+ <div class="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer hover:scale-[1.02] transition-transform duration-300">
+    <img src="https://picsum.photos" alt="Foto 8" class="w-full h-64 object-cover">
+    <div class="p-4 text-center font-medium text-gray-700">Vintage Frame</div>
+ </div>
+
+ <div class="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer hover:scale-[1.02] transition-transform duration-300">
+    <img src="https://picsum.photos" alt="Foto 9" class="w-full h-64 object-cover">
+    <div class="p-4 text-center font-medium text-gray-700">Motion Blur</div>
+ </div>
+
+ <div class="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer hover:scale-[1.02] transition-transform duration-300">
+    <img src="https://picsum.photos" alt="Foto 10" class="w-full h-64 object-cover">
+    <div class="p-4 text-center font-medium text-gray-700">Minimalist Art</div>
+ </div>
+
+ <div class="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer hover:scale-[1.02] transition-transform duration-300">
+    <img src="https://picsum.photos" alt="Foto 11" class="w-full h-64 object-cover">
+    <div class="p-4 text-center font-medium text-gray-700">Contrast Depth</div>
+ </div>
+
+ <div class="bg-white rounded-lg overflow-hidden shadow-md cursor-pointer hover:scale-[1.02] transition-transform duration-300">
+    <img src="https://picsum.photos" alt="Foto 12" class="w-full h-64 object-cover">
+    <div class="p-4 text-center font-medium text-gray-700">Final Cut</div>
+ </div>
+ </main>
+
+ <!--Lightbox-->
+ <div id="lightbox" class="fixed inset-0 bg-black/95 flex flex-col justify-center items-center hidden z-50 p-4">
+    <span class="absolute top-4 right-6 text-white text-5xl cursor-pointer font-bold select-none">&times;</span>
+    <img id="lightbox-img" src=" " alt="Zoom" class="max-w-full max-h-[80vh] rounded-lg shadow-2xl">
+    <p id="lightbox-caption" class="text-white mt-4 text-lg font-medium"></p>
+ </div>
+ </body>
+   <script>
+    const galleryItems = document.querySelectorAll('main > div');
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxCaption = document.getElementById('lightbox-caption');
+
+    galleryItems.forEach(item => {
+        item.addEventListener('click' , () => {
+            const img = item.querySelector('img');
+            const caption = item.querySelector('.p-4');
+
+            lightboxImg.src = img.src;
+            lightboxCaption.textContent = caption.textContent;
+            lightbox.classList.remove('hidden');
+        });
+    });
+
+    lightbox.addEventListener('click' , () => {
+        lightbox.classList.add('hidden');
+    });
+</script>
+ </html>
+
+
+
+
+
+
+
+
+    
+
+
